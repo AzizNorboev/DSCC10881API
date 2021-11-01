@@ -39,7 +39,7 @@ namespace VideoGameAPI10881
             services.AddDbContext<VideoGameContext>(o =>
             o.UseSqlServer(Configuration.GetConnectionString("GameDB")));
 
-            
+            services.AddTransient<IGameRepository, GameRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
