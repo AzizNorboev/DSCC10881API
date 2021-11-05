@@ -5884,23 +5884,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Aziz_Norboev\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\inna2\\.nuget\\packages\\": {},
+    "D:\\Programms\\Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aziz_Norboev\\Documents\\GitHub\\DSCC10881API\\VideoGameAPI10881\\VideoGameAPI10881\\VideoGameAPI10881.csproj",
+      "projectUniqueName": "D:\\csharp_files\\Aziz\\DSCC10881API\\VideoGameAPI10881\\VideoGameAPI10881\\VideoGameAPI10881.csproj",
       "projectName": "VideoGameAPI10881",
-      "projectPath": "C:\\Users\\Aziz_Norboev\\Documents\\GitHub\\DSCC10881API\\VideoGameAPI10881\\VideoGameAPI10881\\VideoGameAPI10881.csproj",
-      "packagesPath": "C:\\Users\\Aziz_Norboev\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aziz_Norboev\\Documents\\GitHub\\DSCC10881API\\VideoGameAPI10881\\VideoGameAPI10881\\obj\\",
+      "projectPath": "D:\\csharp_files\\Aziz\\DSCC10881API\\VideoGameAPI10881\\VideoGameAPI10881\\VideoGameAPI10881.csproj",
+      "packagesPath": "C:\\Users\\inna2\\.nuget\\packages\\",
+      "outputPath": "D:\\csharp_files\\Aziz\\DSCC10881API\\VideoGameAPI10881\\VideoGameAPI10881\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\Programms\\Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Aziz_Norboev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\inna2\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5958,7 +5958,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

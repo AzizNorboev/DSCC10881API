@@ -20,56 +20,126 @@ namespace VideoGameAPI10881.Controllers
         {
             _gameRepository = gameRepository;
         }
+        /// <summary>
+        /// List of all items.
+        /// </summary>
+        /// <returns>The list of video games.</returns>
         // GET: api/Product
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            var games = _gameRepository.GetAll();
+            var games = await _gameRepository.GetAll();
             return new OkObjectResult(games);
             //return new string[] { "value1", "value2" };
         }
+
+        /// <summary>
+        /// Details of a single item.
+        /// </summary>
+        /// <returns>A single video game.</returns>
         // GET: api/Product/5
         [HttpGet("{id}", Name = "Get")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            var game = _gameRepository.GetById(id);
+            var game = await _gameRepository.GetById(id);
             return new OkObjectResult(game);
             //return "value";
         }
-
+        /// <summary>
+        /// Create a new item.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     POST api/Videogames
+        ///     {        
+        ///       "name": "Hades",
+        ///       "genre": "roguelike",
+        ///       "price": "12",
+        ///       "publisher" : "Supergiant Games"
+        ///     }
+        /// </remarks>  
+        /// <returns>Created video game.</returns>
+        /// <response code="201">If returns created video game</response>
+        /// <response code="400">If created video game is null</response>  
         // POST: api/Product
         [HttpPost]
-        public IActionResult Post([FromBody] Videogame game)
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
+        public async Task<IActionResult> Post([FromBody] Videogame game)
         {
-            using (var scope = new TransactionScope())
+            using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
             {
-                _gameRepository.CreateGame(game);
-                scope.Complete();
+                try
+                {
+                    await _gameRepository.CreateGame(game);
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+                finally
+                {
+                    scope.Complete();
+                }
+
                 return CreatedAtAction(nameof(Get), new { id = game.Id }, game);
             }
         }
 
+        /// <summary>
+        /// Update a selected item.
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        /// 
+        ///     PUT api/Videogames/{id}
+        ///     {  
+        ///       "id" : {id}
+        ///       "name": "Hades",
+        ///       "genre": "roguelike",
+        ///       "price": "12",
+        ///       "publisher" : "Supergiant Games"
+        ///     }
+        /// </remarks>   
+        /// <returns>A newly updated video game.</returns>
+        /// <response code="200">If requested video game was updated</response>
+        /// <response code="400">If requested vidoe game was not updated</response>   
         // PUT: api/Product/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Videogame game)
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        public async Task<IActionResult> Put(int id, [FromBody] Videogame game)
         {
             if (game != null)
             {
-                using (var scope = new TransactionScope())
+                using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
                 {
-                    _gameRepository.EditGame(game);
-                    scope.Complete();
+                    try
+                    {
+                        await _gameRepository.EditGame(game);
+                    }
+                    catch (Exception ex)
+                    {
+                        return BadRequest(ex.Message);
+                    }
+                    finally
+                    {
+                        scope.Complete();
+                    }
                     return new OkResult();
                 }
             }
             return new NoContentResult();
         }
-
+        /// <summary>
+        /// Delete a selected item.
+        /// </summary>
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            _gameRepository.DeleteGame(id);
+            await _gameRepository.DeleteGame(id);
             return new OkResult();
         }
     }

@@ -15,38 +15,38 @@ namespace VideoGameAPI10881.Repository
         {
             _dbContext = dbContext;
         }
-        public void DeleteGame(int id)
+        public async Task DeleteGame(int id)
         {
             var game = _dbContext.Videogames.Find(id);
             _dbContext.Videogames.Remove(game);
-            Save();
+            await Save();
         }
-        public Videogame GetById(int id)
+        public async Task<Videogame> GetById(int id)
         {
-            var game = _dbContext.Videogames.Find(id);
-            _dbContext.Entry(game);
-            return game;
+            //var game = _dbContext.Videogames.FindAsync(id);
+            //_dbContext.Entry(game);
+            return await _dbContext.Videogames.FirstOrDefaultAsync(e => e.Id == id);
         }
-        public IEnumerable<Videogame> GetAll()
+        public async Task<List<Videogame>> GetAll()
         {
 
-            return _dbContext.Videogames.ToList();
+            return await _dbContext.Videogames.ToListAsync();
         }
-        public void CreateGame(Videogame game)
+        public async Task CreateGame(Videogame game)
         {
             _dbContext.Add(game);
-            Save();
+            await Save();
         }
-        public void EditGame(Videogame game)
+        public async Task EditGame(Videogame game)
         {
-            //_dbContext.Entry(game).State = EntityState.Modified;
+            _dbContext.Entry(game).State = EntityState.Modified;
             //_dbContext.SaveChanges();
             _dbContext.Videogames.Update(game);
-            Save();
+            await Save();
         }
-        public void Save()
+        public async Task Save()
         {
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

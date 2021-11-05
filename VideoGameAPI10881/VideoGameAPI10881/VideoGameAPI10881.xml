@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VideoGameAPI10881</name>
+    </assembly>
+    <members>
+        <member name="M:VideoGameAPI10881.Controllers.VideogamesController.Get">
+            <summary>
+            List of all items.
+            </summary>
+            <returns>The list of video games.</returns>
+        </member>
+        <member name="M:VideoGameAPI10881.Controllers.VideogamesController.Get(System.Int32)">
+            <summary>
+            Details of a single item.
+            </summary>
+            <returns>A single video game.</returns>
+        </member>
+        <member name="M:VideoGameAPI10881.Controllers.VideogamesController.Post(VideoGameAPI10881.Model.Videogame)">
+            <summary>
+            Create a new item.
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST api/Videogames
+                {        
+                  "name": "Hades",
+                  "genre": "roguelike",
+                  "price": "12",
+                  "publisher" : "Supergiant Games"
+                }
+            </remarks>  
+            <returns>Created video game.</returns>
+            <response code="201">If returns created video game</response>
+            <response code="400">If created video game is null</response>  
+        </member>
+        <member name="M:VideoGameAPI10881.Controllers.VideogamesController.Put(System.Int32,VideoGameAPI10881.Model.Videogame)">
+            <summary>
+            Update a selected item.
+            </summary>
+            <remarks>
+            Sample request:
+            
+                PUT api/Videogames/{id}
+                {  
+                  "id" : {id}
+                  "name": "Hades",
+                  "genre": "roguelike",
+                  "price": "12",
+                  "publisher" : "Supergiant Games"
+                }
+            </remarks>   
+            <returns>A newly updated video game.</returns>
+            <response code="200">If requested video game was updated</response>
+            <response code="400">If requested vidoe game was not updated</response>   
+        </member>
+        <member name="M:VideoGameAPI10881.Controllers.VideogamesController.Delete(System.Int32)">
+            <summary>
+            Delete a selected item.
+            </summary>
+        </member>
+    </members>
+</doc>

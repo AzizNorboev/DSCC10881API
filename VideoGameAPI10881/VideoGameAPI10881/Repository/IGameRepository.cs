@@ -8,10 +8,10 @@ namespace VideoGameAPI10881.Repository
 {
     public interface IGameRepository
     {
-        void CreateGame(Videogame game);
-        void EditGame(Videogame game);
-        void DeleteGame(int id);
-        Videogame GetById(int id);
-        IEnumerable<Videogame> GetAll();
+        Task CreateGame(Videogame game);
+        Task EditGame(Videogame game);
+        Task DeleteGame(int id);
+        Task<Videogame> GetById(int id);
+        Task<List<Videogame>> GetAll();
     }
 }
