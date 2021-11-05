@@ -5890,11 +5890,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\csharp_files\\Aziz\\DSCC10881API\\VideoGameAPI10881\\VideoGameAPI10881\\VideoGameAPI10881.csproj",
+      "projectUniqueName": "D:\\csharp_files\\Aziz\\CW\\DSCC10881API\\VideoGameAPI10881\\VideoGameAPI10881.csproj",
       "projectName": "VideoGameAPI10881",
-      "projectPath": "D:\\csharp_files\\Aziz\\DSCC10881API\\VideoGameAPI10881\\VideoGameAPI10881\\VideoGameAPI10881.csproj",
+      "projectPath": "D:\\csharp_files\\Aziz\\CW\\DSCC10881API\\VideoGameAPI10881\\VideoGameAPI10881.csproj",
       "packagesPath": "C:\\Users\\inna2\\.nuget\\packages\\",
-      "outputPath": "D:\\csharp_files\\Aziz\\DSCC10881API\\VideoGameAPI10881\\VideoGameAPI10881\\obj\\",
+      "outputPath": "D:\\csharp_files\\Aziz\\CW\\DSCC10881API\\VideoGameAPI10881\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Programms\\Visual Studio\\Shared\\NuGetPackages"

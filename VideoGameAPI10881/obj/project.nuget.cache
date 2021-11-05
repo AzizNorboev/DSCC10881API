@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CFrZ2/7gVwDb4R+x9+2H/Ya8nqn7jpzZX8oADupQFNMvXd45cKc7eMcla7q3ZTkdv4LU20Hz0XkHRvPsRs/zSA==",
+  "dgSpecHash": "EtBSwyucupz+ae6TrJASXgFOWFrP5GgbCkJuPxF+cOGrjMzSD0WKnqU9WJxyixTbvrwJ91JKEdwpuVDsttiFRg==",
   "success": true,
-  "projectFilePath": "D:\\csharp_files\\Aziz\\DSCC10881API\\VideoGameAPI10881\\VideoGameAPI10881\\VideoGameAPI10881.csproj",
+  "projectFilePath": "D:\\csharp_files\\Aziz\\CW\\DSCC10881API\\VideoGameAPI10881\\VideoGameAPI10881.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\inna2\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\inna2\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

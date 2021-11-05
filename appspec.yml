@@ -1,0 +1,17 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/DSCC_10881_API
+  - source: scripts/webapi.service
+    destination: /etc/systemd/system
+hooks:
+    ApplicationStop:
+      - location: scripts/application_stop.sh
+        timeout: 10
+    BeforeInstall:
+      - location: scripts/before-install.sh
+        timeout: 10
+    ApplicationStart:
+      - location: scripts/application_start.sh
+        timeout: 200

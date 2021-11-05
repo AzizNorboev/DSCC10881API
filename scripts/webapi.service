@@ -1,0 +1,18 @@
+[Unit]
+Description=ASP.NET Core web API on Ubuntu
+
+[Service]
+WorkingDirectory=/var/www/DSCC_10881_API_build
+ExecStart=/usr/bin/dotnet /var/www/DSCC_10881_API_build/VideoGameAPI10881.dll
+Restart=always
+# Restart service after 10 seconds if the dotnet service crashes:
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=dscc-10881
+User=ubuntu
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+Environment=HOME=/root
+
+[Install]
+WantedBy=multi-user.target
